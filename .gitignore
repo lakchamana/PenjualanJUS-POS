@@ -1,0 +1,15 @@
+# Dependencies / Library
+node_modules/
+
+# File Konfigurasi & Database 
+includes/config.php
+includes/db.php
+
+# File hasil generate aplikasi / User Uploads
+public/receipts/*
+!public/receipts/.gitkeep
+
+# OS / Code Editor files
+.vscode/
+Thumbs.db
+.DS_Store
