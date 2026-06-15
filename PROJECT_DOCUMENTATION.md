@@ -177,15 +177,15 @@ erDiagram
         varchar password_hash
         varchar name
         varchar phone
-        varchar role "KASIR, LEADER, ADMIN"
-        datetime created_at
+        varchar role "KASIR LEADER ADMIN"
+        date created_at
     }
 
     categories {
         int id PK
         varchar code UK
         varchar name
-        datetime created_at
+        date created_at
     }
 
     menus {
@@ -193,11 +193,11 @@ erDiagram
         int category_id FK
         varchar code UK
         varchar name
-        decimal price
+        float price
         int stock
-        tinyint available
+        int available
         text description
-        datetime created_at
+        date created_at
     }
 
     members {
@@ -205,19 +205,19 @@ erDiagram
         varchar code UK
         varchar name
         varchar phone
-        datetime created_at
+        date created_at
     }
 
     orders {
         int id PK
-        varchar visit_type "DINE, TAKEAWAY"
-        varchar status "PENDING, FINISHED, CANCELLED"
+        varchar visit_type "DINE TAKEAWAY"
+        varchar status "PENDING FINISHED CANCELLED"
         int member_id FK
         int user_id FK
-        decimal subtotal
-        decimal discount
-        decimal total
-        datetime created_at
+        float subtotal
+        float discount
+        float total
+        date created_at
         varchar order_no UK
     }
 
@@ -226,43 +226,43 @@ erDiagram
         int order_id FK
         int menu_id FK
         int qty
-        decimal price
-        datetime created_at
+        float price
+        date created_at
     }
 
     payments {
         int id PK
         int order_id FK
-        varchar method "CASH, CARD, VOUCHER"
-        decimal amount
+        varchar method "CASH CARD VOUCHER"
+        float amount
         string meta
-        datetime created_at
+        date created_at
     }
 
     promotions {
         int id PK
         varchar code UK
-        varchar type "BUNDLE, PERCENT, AMOUNT"
-        decimal value
-        tinyint active
-        datetime starts_at
-        datetime ends_at
-        datetime created_at
+        varchar type "BUNDLE PERCENT AMOUNT"
+        float value
+        int active
+        date starts_at
+        date ends_at
+        date created_at
     }
 
     promo_applied {
-        INT_UNSIGNED id PK
-        INT_UNSIGNED order_id FK
-        INT_UNSIGNED promo_id FK
-        JSON meta
-        DATETIME created_at
+        int id PK
+        int order_id FK
+        int promo_id FK
+        string meta
+        date created_at
     }
 
     receipts {
-        INT_UNSIGNED id PK
-        INT_UNSIGNED order_id FK_UK
-        TEXT file_path
-        DATETIME created_at
+        int id PK
+        int order_id FK
+        text file_path
+        date created_at
     }
 ```
 
