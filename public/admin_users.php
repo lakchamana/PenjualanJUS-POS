@@ -167,7 +167,7 @@ $displayName = htmlspecialchars($_SESSION['user_name'] ?? 'Admin', ENT_QUOTES, '
             <select id="userRole" class="w-full p-2 border rounded">
               <option value="ADMIN">ADMIN</option>
               <option value="LEADER">LEADER</option>
-              <option value="CASHIER">CASHIER</option>
+              <option value="KASIR">KASIR</option>
             </select>
           </div>
           <div>
